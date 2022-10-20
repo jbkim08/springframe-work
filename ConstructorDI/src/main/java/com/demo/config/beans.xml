@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 기본 생성자 -->
+	<bean id="obj1" class="com.demo.beans.TestBean" lazy-init="true" />
+	<!-- 생성자 변수 int 1개 -->
+	<bean id="obj2" class="com.demo.beans.TestBean" lazy-init="true">
+		<constructor-arg value="100" type="int" />
+	</bean>
+	<!-- 생성자 변수 double 1개 -->
+	<bean id="obj3" class="com.demo.beans.TestBean" lazy-init="true">
+		<constructor-arg value="11.11" type="double" />
+	</bean>
+	<!-- 생성자 변수 String 1개 -->
+	<bean id="obj4" class="com.demo.beans.TestBean" lazy-init="true">
+		<constructor-arg value="문자열" type="java.lang.String" />
+	</bean>
+	<!-- 생성자 변수 3개 -->
+	<bean id="obj5" class="com.demo.beans.TestBean" lazy-init="true">
+		<constructor-arg value="200" type="int" />
+		<constructor-arg value="22.22" type="double" />
+		<constructor-arg value="안녕하세요" type="java.lang.String" />
+	</bean>
+	<!-- 생성자 변수 3개 -->
+	<bean id="obj6" class="com.demo.beans.TestBean" lazy-init="true">
+		<constructor-arg value="반갑습니다." type="java.lang.String" />
+		<constructor-arg value="300" type="int" />
+		<constructor-arg value="33.33" type="double" />		
+	</bean>
+	<!-- 생성자 변수 3개 인덱스로 순서 정하기 -->
+	<bean id="obj7" class="com.demo.beans.TestBean" lazy-init="true">
+		<constructor-arg value="반갑습니다." type="java.lang.String" index="2" />
+		<constructor-arg value="300" type="int" index="0" />
+		<constructor-arg value="33.33" type="double" index="1" />		
+	</bean>
+	<!-- 생성자로 객체 2개를 입력받음 -->
+	<bean id="obj8" class="com.demo.beans.TestBean2" lazy-init="true">
+		<constructor-arg>
+			<bean class="com.demo.beans.DataBean" />
+		</constructor-arg>	
+		<constructor-arg>
+			<bean class="com.demo.beans.DataBean" />
+		</constructor-arg>		
+	</bean>
+</beans>
