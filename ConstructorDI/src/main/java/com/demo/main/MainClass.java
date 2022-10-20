@@ -53,6 +53,11 @@ public class MainClass {
 		
 		System.out.println("------------------------------------");
 		
+		TestBean2 obj9 = ctx.getBean("obj9", TestBean2.class);
+		obj9.printData();
+		
+		System.out.println("------------------------------------");
+		
 		ctx.close();
 	}	
 }

@@ -44,4 +44,13 @@
 			<bean class="com.demo.beans.DataBean" />
 		</constructor-arg>		
 	</bean>
+	
+	<!-- 입력할 객체를 먼저 생성 프로토타입  -->
+	<bean id="data_bean" class="com.demo.beans.DataBean" scope="prototype" />
+	
+	<bean id="obj9" class="com.demo.beans.TestBean2" lazy-init="true">
+		<constructor-arg ref="data_bean" />
+		<constructor-arg ref="data_bean" />
+	</bean>
+	
 </beans>
