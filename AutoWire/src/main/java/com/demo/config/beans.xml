@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="obj1" class="com.demo.beans.TestBean1">
+		<property name="data1" ref="data_bean1" />
+		<property name="data2" ref="data_bean1" />
+	</bean>
+	
+	<bean id="data_bean1" class="com.demo.beans.DataBean1" scope="prototype" />
+	
+	<!-- 객체의 이름으로 자동 주입 -->
+	<bean id="obj2" class="com.demo.beans.TestBean1" autowire="byName" />
+	
+	<bean id="data1" class="com.demo.beans.DataBean1" />
+	<bean id="data2" class="com.demo.beans.DataBean1" />
+	
+	<!-- 객체의 타입으로 자동 주입 -->
+	<bean id="obj3" class="com.demo.beans.TestBean2" autowire="byType" />
+	
+	<bean class="com.demo.beans.DataBean2" />
+	
+	<!-- 생성자 자동 주입 -->
+	<bean id="obj4" class="com.demo.beans.TestBean2" autowire="constructor" />
+</beans>
+
+
+
+
+
