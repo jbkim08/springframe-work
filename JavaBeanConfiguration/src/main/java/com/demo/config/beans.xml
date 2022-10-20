@@ -4,7 +4,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	                    http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<bean id="xml1" class="com.demo.beans.TestBean1" />
+	<bean id="xml2" class="com.demo.beans.TestBean2" lazy-init="true" />
+	<bean id="xml3" class="com.demo.beans.TestBean3" scope="prototype" />
 	
+	<bean class="com.demo.beans.TestBean4" />
+	<!-- primary는 같은 타입일경우 우선순위 -->
+	<bean class="com.demo.beans.TestBean4" primary="true" />
 </beans>
 
 
