@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 객체가 생성될 때 생성자가 호출된 이후 init-method에 설정한 메서드가 자동으로 호출되고 IoC 컨테이너의 close 메서드를 호출하면
+		객체가 소멸되며 destroy-method에 설정한 메서드가 자동으로 호출된다.
+	 -->
+	<bean id="t1" class="com.demo.beans.TestBean1"
+	 lazy-init="true" init-method="bean1_init" destroy-method="bean1_destroy" />
+	       
+</beans>
