@@ -11,5 +11,17 @@
 	                    http://www.springframework.org/schema/aop/spring-aop.xsd">
 	                    
 	<bean id='xml1' class='com.demo.beans.TestBean'/>  
+	
+	<bean id="advisor1" class="com.demo.advisor.AdvisorClass" />
+	
+	<aop:config>
+		<aop:aspect ref="advisor1">
+			<aop:pointcut expression="execution(* method1())" id="point1"/>
+			
+			<aop:before method="beforeMethod" pointcut-ref="point1" />
+			<aop:after method="afterMethod" pointcut-ref="point1" />
+			<aop:around method="aroundMethod" pointcut-ref="point1"/>
+		</aop:aspect>
+	</aop:config>
 	 
 </beans>

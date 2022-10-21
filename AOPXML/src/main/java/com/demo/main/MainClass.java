@@ -12,7 +12,9 @@ public class MainClass {
 				new ClassPathXmlApplicationContext("com/demo/config/beans.xml");
 		
 		TestBean bean1 = ctx.getBean("xml1", TestBean.class);
-		bean1.method1();
+		
+		int a1 = bean1.method1();
+		System.out.printf("a1 : %d\n", a1);
 		
 		ctx.close();
 
