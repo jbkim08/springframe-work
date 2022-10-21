@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.demo.beans.TestBean1;
 import com.demo.beans.TestBean2;
+import com.demo.beans.TestBean3;
 import com.demo.config.BeanConfigClass;
 
 public class MainClass {
@@ -33,6 +34,11 @@ public class MainClass {
 		
 		System.out.println("-----------------------------------------");
 
+		TestBean3 java4 = ctx.getBean("java4", TestBean3.class);
+		System.out.printf("java4.data1 : %s\n", java4.getData1());
+		System.out.printf("java4.data2 : %s\n", java4.getData2());
+		
+		System.out.println("-----------------------------------------");
 		
 		ctx.close();
 	}	

@@ -7,8 +7,10 @@ import org.springframework.context.annotation.Lazy;
 
 import com.demo.beans.DataBean1;
 import com.demo.beans.DataBean2;
+import com.demo.beans.DataBean3;
 import com.demo.beans.TestBean1;
 import com.demo.beans.TestBean2;
+import com.demo.beans.TestBean3;
 
 @Configuration
 public class BeanConfigClass {
@@ -42,6 +44,17 @@ public class BeanConfigClass {
 	@Bean(autowire = Autowire.BY_NAME)
 	public TestBean2 java3() {
 		return new TestBean2();
+	}
+	
+	@Bean
+	public DataBean3 data100() {
+		return new DataBean3();
+	}
+	
+	// 타입으로 자동주입 위의 data100이 자동 주입됨
+	@Bean(autowire = Autowire.BY_TYPE)
+	public TestBean3 java4() {
+		return new TestBean3();
 	}
 	
 }
