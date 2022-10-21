@@ -7,7 +7,10 @@ import org.springframework.context.annotation.Lazy;
 
 import com.demo.beans.DataBean1;
 import com.demo.beans.DataBean2;
+import com.demo.beans.DataBean3;
+import com.demo.beans.DataBean4;
 import com.demo.beans.TestBean1;
+import com.demo.beans.TestBean2;
 
 
 @Configuration
@@ -36,6 +39,20 @@ public class BeanConfigClass {
 		return new DataBean2();
 	}
 	
+	@Bean
+	public TestBean2 java2() {
+		return new TestBean2();
+	}
+	
+	@Bean
+	public DataBean3 data_bean3() {
+		return new DataBean3();
+	}
+	
+	@Bean
+	public DataBean4 data_bean4() {
+		return new DataBean4();
+	}
 }
 
 
