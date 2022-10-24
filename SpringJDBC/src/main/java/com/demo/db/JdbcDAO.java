@@ -34,10 +34,16 @@ public class JdbcDAO {
 	
 	// 수정
 	public void update_data(JdbcBean bean) {
+		String sql = "update jdbc_table set str_data = ? where int_data = ?";
+		db.update(sql, bean.getStr_data(), bean.getInt_data());
+
 	}
 	
 	// 삭제
 	public void delete_data(int int_data) {
+		String sql = "delete from jdbc_table where int_data = ?";
+		db.update(sql, int_data);
+
 	}
 
 }

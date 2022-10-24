@@ -26,6 +26,13 @@ public class MainClass {
 //		bean2.setStr_data("문자열2");
 //		
 //		dao.insert_data(bean2); //오라클 DB에 입력
+//		JdbcBean bean3 = new JdbcBean();
+//		bean3.setInt_data(1);
+//		bean3.setStr_data("문자열3");
+//		
+//		dao.update_data(bean3);
+		
+		dao.delete_data(1);
 		
 		List<JdbcBean> list = dao.select_data();
 		
