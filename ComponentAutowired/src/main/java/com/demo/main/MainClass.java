@@ -31,7 +31,7 @@ public class MainClass {
 		System.out.printf("t2.data4 : %s\n", t2.getData4());
 
 		System.out.println("-------------------------------------------");
-		
+		//t3은 생성자 자동주입으로 객체가 생성됨
 		TestBean3 t3 = ctx.getBean(TestBean3.class);
 		
 		System.out.printf("t3.data1 : %s\n", t3.getData1());
